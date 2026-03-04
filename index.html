@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry My Charan ❤️</title>
+<link rel="stylesheet" href="sindiya.css">
+</head>
+<body onclick="startMusic()">
+
+<!-- Mannipaaya Music -->
+<iframe id="musicFrame"
+src="https://www.youtube.com/embed/4hP1s6u3M6k?enablejsapi=1&loop=1&playlist=4hP1s6u3M6k">
+</iframe>
+
+<div class="card">
+
+   
+
+    <h1>I'm Sorry Charan ❤️</h1>
+
+    <p>
+        mama,<br><br>
+        I never meant to hurt you.  
+        You are my happiness and my heart.  
+        Please forgive me and let me make you smile again 💕
+        I love you so much❤️
+        na una eppavum easy ya eduthuka mata
+        sorry innuma promise intha msri pana matta
+    </p>
+    <p>
+        Yes i know i hurt you. For that i am sorry from the heart i know sometimes i may be very rude to you but my intentions are not about to made you feel sad. Yes i cry over small things i don't why but i was and i will always love you to the square of infinity co. I can fight with you but never wanna loose you so its my fault i am being sorry about the miss understanding know how much i want you you will never get to my love for that you will you is like deep oceans never count
+                                    I LOVE YOU❤️🌹
+
+    </p>
+    <div class="buttons">
+        <button class="yes" onclick="showLove()">Yes 💖</button>
+        <button class="no" id="noBtn">No 😢</button>
+    </div>
+
+    <!-- Message will appear here -->
+    <div id="loveMessage">
+        Thank you Charan ❤️🥺  
+        I promise to love you more every single day.  
+        You are my forever and always 💕
+    </div>
+
+</div>
+
+<script>
+
+/* Slideshow */
+let slides=document.querySelectorAll(".slideshow img");
+let index=0;
+setInterval(()=>{
+    slides[index].classList.remove("active");
+    index=(index+1)%slides.length;
+    slides[index].classList.add("active");
+},3000);
+
+/* Start music after first tap */
+let started=false;
+function startMusic(){
+    if(!started){
+        let frame=document.getElementById("musicFrame");
+        frame.src="https://www.youtube.com/embed/4hP1s6u3M6k?autoplay=1&loop=1&playlist=4hP1s6u3M6k";
+        started=true;
+    }
+}
+
+/* YES button message */
+function showLove(){
+    document.getElementById("loveMessage").style.display="block";
+}
+
+/* Running NO button */
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("touchstart",moveButton);
+noBtn.addEventListener("mouseover",moveButton);
+
+function moveButton(){
+    const x=Math.random()*(window.innerWidth-100);
+    const y=Math.random()*(window.innerHeight-50);
+    noBtn.style.left=x+"px";
+    noBtn.style.top=y+"px";
+}
+
+/* Floating hearts */
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*window.innerWidth+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
